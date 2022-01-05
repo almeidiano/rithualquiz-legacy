@@ -1,0 +1,133 @@
+@font-face {
+	font-family: 'JetBrains Mono Regular';
+	src: url('JetBrainsMono-Regular.ttf');
+}
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+	color: #FFF;
+	font-family: 'JetBrains Mono Regular';
+	background-image: url('../img/characters/banner.png');
+	background-size: cover;
+    background-position: 70%;
+    background-repeat: no-repeat;
+}
+.btn{
+	color: #FFF;
+	border: 1px solid #FFF;
+	padding: 10px;
+	text-decoration: none;
+}
+.btn:hover{
+	color: #000;
+	background-color: #FFF;
+}
+.btnArea{
+	text-align: center;
+	padding: 20px;
+}
+a,span{
+	color: rgb(209, 106, 208);
+}
+#container{
+	background-color: #000;
+	border: 2px solid #9d319c;
+	width: 80%;
+	margin: auto;
+	margin-top: 10px;
+}
+.title{
+	color: #fb4cec;
+}
+.content{
+	width: 95%;
+	margin: auto;
+	padding: 10px 0px;
+}
+.main-title{
+	display: flex;
+	justify-content: center;
+}
+.desc-text,
+.desc-title{
+	text-align: center;
+}
+.banner{
+	padding: 20px 0px;
+	margin: 20px 0px 50px 0px;
+	display: flex;
+	justify-content: center;
+}
+.banner img{
+	filter: drop-shadow(2px 8px 10px gray);
+	transition-duration: 200ms;
+	height: 400px;
+}
+.banner img:hover{
+	transition-duration: 200ms;
+	transform: translateY(-0.5rem); 
+}
+.singer:hover{
+	filter: drop-shadow(2px 8px 20px red) !important;
+	transition: 0.3s !important;
+}
+.aika:hover{
+	filter: drop-shadow(2px 8px 20px #ff008c) !important;
+	transition: 0.3s !important;
+}
+.madger:hover{
+	filter: drop-shadow(2px 8px 20px #2a6bcc) !important;
+	transition: 0.3s !important;
+}
+.san:hover{
+	filter: drop-shadow(2px 8px 20px white) !important;
+	transition: 0.3s !important;
+}
+footer{
+	background: #000;
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+@media (max-width: 1127px) {
+	.banner img{
+		height: 350px;
+	}
+}
+@media (max-width: 990px) {
+	.banner img{
+		height: 300px;
+	}
+}
+@media (max-width: 950px) {
+	body{
+		background-position: 65%;
+	}
+}
+@media (max-width: 851px) {
+	.banner img{
+		height: 260px;
+	}
+}
+@media (max-width: 741px) {
+	.banner{
+		display: block;
+	}
+	.characters{
+		text-align: center;
+	}
+	.banner img{
+		padding: 0px 30px;
+	}
+}
+@media (max-width: 528px) {
+	.banner img{
+		padding: 0px 15px;
+	}
+}
+@media (max-width: 450px) {
+	.banner img{
+		padding: 0px 5px;
+	}
+}

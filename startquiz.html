@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="assets/img/favicon.png" />
+	<link rel="stylesheet" href="assets/css/quiz.css" />
+	<title>Ritual Quiz</title>
+</head>
+<body>
+	<main id="container">
+		<div class="content">
+			<div class="main-title title"><h2>(૨¡Ƭષαℓ Quiz - Teste</h2></div>
+			<div class="desc-content">
+				<div class="playerNickDesc">
+					Digite seu apelido para deixar o teste customizado. 	
+				</div>
+				<form id="userNick">
+					<div class="question">
+						<input required="" type="text" class="playerNickName" placeholder="Digite seu Apelido">
+					</div>
+					<div class="startBtnArea"><button type="submit" class="btn">Começar o teste</button></div>
+				</form>
+			</div>
+		</div>
+	</main>
+	<footer><a href="#"><img src="assets/img/github.png" height="50"></a></footer>
+	<script type="text/javascript">
+		const nickForm = document.getElementById("userNick");
+
+		nickForm.addEventListener("submit", (e) => {
+			e.preventDefault();
+			let input = document.querySelector("input");			
+
+			localStorage.setItem("playerNick", input.value);
+			window.location.href = "quiz.html";
+		})
+	</script>
+</body>
+</html>
