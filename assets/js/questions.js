@@ -7,7 +7,7 @@ if(playerNick == null) {
 let questions = [
 	{
 		id: 1,
-		question: `${playerNick}, qual desses você destacaria como principal qualidade sua?`,
+		question: `${playerNick}, qual dessas você destacaria como principal qualidade sua?`,
 		answers: [
 			{
 				id: 1,
@@ -25,7 +25,7 @@ let questions = [
 				id: 3,
 				effect: 3,
 				characteristic: "intellectual",
-				answer: "Estudioso(a)"
+				answer: "Inteligente"
 			},
 			{
 				id: 4,
@@ -104,7 +104,7 @@ let questions = [
 				id: 1,
 				effect: 1,
 				characteristic: "charisma",
-				answer: "Vejo fotos de pessoas importantes para matar um pouco da saudade."
+				answer: "Lembro-me de acontecimentos passados que me dão saudades."
 			},
 			{
 				id: 2,
@@ -149,13 +149,13 @@ let questions = [
 				id: 3,
 				effect: 1,
 				characteristic: "charisma",
-				answer: "Claro que não, meu sono é mais importante."
+				answer: "Meu sono é mais importante."
 			},
 			{
 				id: 4,
 				effect: 2,
 				characteristic: "intellectual",
-				answer: "Prefiro estudar ou descansar um pouco."
+				answer: "Claro que não, prefiro outras coisas."
 			}]
 	},
 	{
@@ -201,7 +201,7 @@ let questions = [
 				id: 2,
 				effect: 2,
 				characteristic: "intro",
-				answer: "Uma espada." 
+				answer: "Espadas." 
 			},
 			{
 				id: 3,
@@ -303,7 +303,7 @@ let questions = [
 				id: 3,
 				effect: 1,
 				characteristic: "extro",
-				answer: "Considero chato, prefiro treinar." 
+				answer: "Considero chato, prefiro fazer outras coisas." 
 			},
 			{
 				id: 4,
@@ -483,15 +483,45 @@ let questions = [
 				id: 4,
 				effect: 1,
 				characteristic: "intellectual",
-				answer: "Frutos do mar."
+				answer: "Peixes ou frutos do mar."
 			}]
 	},
 	{
 		id: 17,
+		typeOf: "static",
+		question: 'Qual desses animais é o seu favorito?',
+		answers: [
+			{
+				id: 1,
+				effect: 1,
+				characteristic: "intro",
+				answer: "Pássaros e aves." 
+			},
+			{
+				id: 2,
+				effect: 1,
+				characteristic: "extro",
+				answer: "Cachorros e caninos."
+			},
+			{ 
+				id: 3,
+				effect: 1,
+				characteristic: 'charisma',
+				answer: 'Gatos e felinos' 
+			},
+			{
+				id: 4,
+				effect: 1,
+				characteristic: "intellectual",
+				answer: "Animais marinhos."
+			}]
+	},
+	{
+		id: 18,
 		typeOf: "dynamic",
 		focus: "charisma",
 		opposite: "intellectual",
-		question: 'Você gosta desenhar para se divertir?',
+		question: 'Você gosta de desenhar para se divertir?',
 		answers: [
 			{
 				id: 1,
@@ -518,69 +548,70 @@ let questions = [
 				answer: "Não! Que coisa chata."
 			}]
 	},
-	// {
-	// 	id: 18,
-	// 	typeOf: "dynamic",
-	// 	focus: "charisma",
-	// 	opposite: "intellectual",
-	// 	question: 'Você gosta de desenhar para se divertir?',
-	// 	answers: [
-	// 		{
-	// 			id: 1,
-	// 			effect: 1,
-	// 			characteristic: "intro",
-	// 			answer: "Adoraria, mas não sei desenhar." 
-	// 		},
-	// 		{
-	// 			id: 2,
-	// 			effect: 1,
-	// 			characteristic: "extro",
-	// 			answer: "Tanto faz, prefiro outras coisas."
-	// 		},
-	// 		{ 
-	// 			id: 3,
-	// 			effect: 1,
-	// 			characteristic: 'charisma',
-	// 			answer: 'Sim! adoro desenhar!' 
-	// 		},
-	// 		{
-	// 			id: 4,
-	// 			effect: 1,
-	// 			characteristic: "intellectual",
-	// 			answer: "Não! Que coisa chata."
-	// 		}]
-	// }
-	// {
-	// 	id: 19,
-	// 	typeOf: "dynamic",
-	// 	focus: "intro",
-	// 	opposite: "extro",
-	// 	question: 'Você tem costume de falar sozinho na ausência de pessoas?',
-	// 	answers: [ 
-	// 		{
-	// 			id: 1,
-	// 			effect: 1,
-	// 			characteristic: "intro",
-	// 			answer: "" 
-	// 		},
-	// 		{
-	// 			id: 2,
-	// 			effect: 1,
-	// 			characteristic: "extro",
-	// 			answer: ""
-	// 		},
-	// 		{ 
-	// 			id: 3,
-	// 			effect: 1,
-	// 			characteristic: 'charisma',
-	// 			answer: '' 
-	// 		},
-	// 		{
-	// 			id: 4,
-	// 			effect: 1,
-	// 			characteristic: "intellectual",
-	// 			answer: ""
-	// 		}
-	// 	]
-	// }
+	{
+		id: 19,
+		typeOf: "dynamic",
+		focus: "intro",
+		opposite: "extro",
+		question: 'Você tem costume de falar sozinho na ausência de pessoas?',
+		answers: [ 
+			{
+				id: 1,
+				effect: 2,
+				characteristic: "intro",
+				answer: "Sim, gosto de refletir nos meus pensamentos dessa maneira" 
+			},
+			{
+				id: 2,
+				effect: 2,
+				characteristic: "extro",
+				answer: "Claro que não! Coisa de maluco."
+			},
+			{ 
+				id: 3,
+				effect: 1,
+				characteristic: 'charisma',
+				answer: 'Não tenho costume de falar sozinho(a)' 
+			},
+			{
+				id: 4,
+				effect: 1,
+				characteristic: "intellectual",
+				answer: "Só falo sozinho(a) quando estou empolgado(a)"
+			}
+		]
+	},
+	{
+		id: 20,
+		typeOf: "dynamic",
+		focus: "intro",
+		opposite: "intellectual",
+		question: 'Você é uma pessoa constantemente ansiosa?',
+		answers: [ 
+			{
+				id: 1,
+				effect: 2,
+				characteristic: "intro",
+				answer: "Sim, não tenho 1 minuto de paz com ansiedade!" 
+			},
+			{
+				id: 2,
+				effect: 1,	
+				characteristic: "extro",
+				answer: "Não, consigo controlar até bem minha ansiedade."
+			},
+			{ 
+				id: 3,
+				effect: 1,
+				characteristic: 'charisma',
+				answer: 'Sim, as vezes fico ansioso(a)' 
+			},
+			{
+				id: 4,
+				effect: 2,
+				characteristic: "intellectual",
+				answer: "Não sou uma pessoa ansiosa."
+			}
+		]
+	}
 ];

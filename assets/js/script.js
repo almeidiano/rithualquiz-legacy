@@ -17,13 +17,13 @@ function questionNumber() {
 	questionNumber++;
 	c(".question .highlight").innerHTML = `${questionNumber}.`;
 
-	if(questionNumber == 18) {
+	if(questionNumber == 21) {
 		var largestNumber = 0;
-		console.log(playerAttributes);
 
 		Object.values(playerAttributes).forEach(char => {
-			if(largestNumber < char) {
+			if(largestNumber <= char) {
 				largestNumber = char;
+				window.location.href = "result.html";
 			}
 		});
 
@@ -32,7 +32,7 @@ function questionNumber() {
 		const finalRes = new Object();
 		localStorage.setItem("charResult", charSelected);
 
-		window.location.href = "result.html";
+		// window.location.href = "result.html";
 	}
 }
 
@@ -64,28 +64,6 @@ if(c(".content").classList.contains("quiz")) {
 		c(".btnsArea").innerHTML += `<button class="btn" onclick="updateQuestion(this)" data-effect="${el.effect}" data-char="${el.characteristic}"><div class="btnText">${el.answer}</div></button>`;
 	});
 }
-	
-// cs("button").forEach(btn => {
-// 	btn.addEventListener("click", () => {
-// 		let dataEffect = parseInt(btn.getAttribute("data-effect"));
-// 		let dataChar = btn.getAttribute("data-char");
-
-//         console.log(dataEffect);
-//         console.log(dataChar);
-
-// 		let charEffects = new Object();
-// 		charEffects[dataChar] = dataEffect;
-// 		let sum = [];
-
-// 	    Object.keys(playerAttributes).forEach(key => {
-// 	        if(Object.keys(charEffects) == key){
-// 	        	playerAttributes[key] += dataEffect;
-// 	        	console.log(playerAttributes);
-// 	        }
-// 	    })
-// 		questionNumber();
-// 	});
-// })
 
 function updateQuestion(btn) {
 		questionNumber();
@@ -118,12 +96,6 @@ function updateQuestion(btn) {
 				    })
 				break;
 			}
-
-		    Object.keys(playerAttributes).forEach(key => {
-		        if(Object.keys(charEffects) == key){
-		        	playerAttributes[key] += dataEffect;
-		        }
-		    })
 		}else{
 		    Object.keys(playerAttributes).forEach(key => {
 		        if(Object.keys(charEffects) == key){
@@ -133,4 +105,9 @@ function updateQuestion(btn) {
 		}
 
 	    applyQuestion();
+}
+
+function updateStrangeQuestion() {
+	questionNumber();
+	applyQuestion();
 }

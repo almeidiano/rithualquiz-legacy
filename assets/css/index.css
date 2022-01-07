@@ -88,7 +88,9 @@ footer{
 	background: #000;
 	display: flex;
 	justify-content: center;
-	padding: 20px;
+	padding: 10px;
+	margin-top: 30px;
+
 }
 @media (max-width: 1127px) {
 	.banner img{
@@ -129,5 +131,15 @@ footer{
 @media (max-width: 450px) {
 	.banner img{
 		padding: 0px 5px;
+	}
+}
+@media (max-width: 397px) {
+	.banner img{
+		padding: 0px 0px;
+	}
+}
+@media (max-width: 370px) {
+	.banner img{
+		height: 230px;
 	}
 }

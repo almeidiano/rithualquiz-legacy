@@ -121,6 +121,18 @@ footer{
 	padding: 5px;
 	width: 100%;
 }
+.points{
+	display: flex;
+	justify-content: flex-end;
+	width: 95%;
+	font-size: 5px;
+	color: gray;
+	margin: auto;
+}
+.point{
+	color: #FFF;
+	text-decoration: none;
+}
 @media (max-width: 1000px) {
 	.quiz{
     	min-width: 90%;
@@ -129,5 +141,10 @@ footer{
 @media (max-width: 550px) {
 	.main-title{
     	font-size: 15px;
+	}
+}
+@media (max-width: 330px) {
+	.main-title{
+    	font-size: 13px;
 	}
 }

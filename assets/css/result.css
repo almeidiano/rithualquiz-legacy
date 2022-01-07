@@ -82,9 +82,17 @@ button{
 	transition-duration: 200ms;
 	transform: translateY(-0.5rem); 
 }
+.madger{
+	animation: 5s infinite forwards madger-animation;
+}
+.singer{
+	animation: 5s infinite forwards singer-animation;
+}
+.san{
+	animation: 5s infinite forwards san-animation;
+}
 .aika{
-	filter: drop-shadow(2px 8px 15px #ff008c) !important;
-	transition: 0.3s !important;
+    animation: 5s infinite forwards aika-animation;
 }
 .char-desc{
 	text-align: center;
@@ -108,4 +116,16 @@ footer{
 	.content{
 		width: 90%;
 	}
+}
+@keyframes madger-animation {
+	50% { filter: drop-shadow(2px 8px 20px rgb(0, 128, 0)); }
+}
+@keyframes singer-animation {
+	50% { filter: drop-shadow(2px 8px 20px rgb(159, 209, 226)); }
+}
+@keyframes san-animation {
+	50% { filter: drop-shadow(2px 8px 20px rgb(255, 165, 0)); }
+}
+@keyframes aika-animation {
+	50% { filter: drop-shadow(2px 8px 20px rgb(255, 0, 140)); }
 }
