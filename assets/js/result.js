@@ -40,7 +40,7 @@ if(charResult == null) {
 				break;
 			}
 			c(".char-desc").innerHTML = finalCharacter.characterDesc;
-			// localStorage.clear();
+			localStorage.clear();
 		}
 	})
 }
