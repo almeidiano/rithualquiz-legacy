@@ -592,7 +592,7 @@ let questions = [
 				id: 1,
 				effect: 2,
 				characteristic: "intro",
-				answer: "Sim, não tenho 1 minuto de paz com ansiedade!" 
+				answer: "SIM, NÃO TENHO 1 MINUTO DE PAZ COM ANSIEDADE!" 
 			},
 			{
 				id: 2,

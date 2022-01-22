@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="assets/img/favicon.png" />
+	<link rel="stylesheet" href="assets/css/404.css" />
+	<title>Rithual Quiz</title>
+</head>
+<body>
+	<main id="container">
+		<div class="content">
+			<div class="main-title title"><h2>(૨¡Ƭષαℓ Quiz</h2></div>
+			<div class="desc-content">
+				<div class="desc-title title">
+					<h1>:( Ops! Ocorreu um erro.</h1>
+				</div>
+				<div class="desc-text">
+					Parece que um código malicioso está sendo inserido no nosso sistema! O site reniciará automaticamente após <span class="seconds">10</span> segundos. 
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer><a href="https://github.com/almeidiano/rithualquiz" target="_blank"><img src="assets/img/github.png" height="50"></a></footer>
+
+	<script type="text/javascript">
+		let count = 10;
+		const counter = setInterval(timer, 1000);
+
+		function timer() {
+			count = count-1;
+			document.querySelector(".seconds").innerHTML = count;
+			if(count <= 0) {
+				window.location.href = "index.html";
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,18 +1,22 @@
 @font-face {
 	font-family: 'JetBrains Mono Regular';
-	src: url('JetBrainsMono-Regular.ttf');
+	src: url('../fonts/JetBrainsMono-Regular.ttf');
+}
+html{
+	height: 100%;
+	width: 100%;
 }
 body{
 	margin: 0;
 	padding: 0;
+	height: 100%;
+	width: 100%;
 	background-color: #000;
 	color: #FFF;
 	font-family: 'JetBrains Mono Regular';
 	background-image: url('../img/characters/banner.png');
 	background-size: cover;
 	background-repeat: no-repeat;
-    height: 100%;
-    overflow-x: hidden;
     background-position: 55%;
 }
 .btn{
@@ -54,21 +58,30 @@ button{
 	color: rgb(209, 106, 208);
 }
 #container{
-	margin-top: 10px;
-	height: 100vh;
-	width: 100%;
-	display: flex;
-	align-items: center;
+    width: -webkit-calc(100% - 8px);
+    width: -moz-calc(100% - 8px);
+    width: calc(100% - 8px);
+    height: -webkit-calc(100% - 8px);
+    height: -moz-calc(100% - 8px);
+    height: calc(100% - 8px);
+    text-align: center;
 }
 .title{
 	color: #fb4cec;
 }
 .content{
 /*	width: 60%;*/
-	margin: auto;
 	padding: 10px 0px;
 	background: #000;
 	border: 2px solid #9d319c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
 }
 .quiz{
 	width: 60%;
@@ -111,25 +124,21 @@ button{
 	font-weight: bold;
 }
 footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    display: flex;
 	background: #000;
 	display: flex;
 	justify-content: center;
-	padding: 5px;
-	width: 100%;
+	padding: 10px;
 }
 .points{
 	display: flex;
 	justify-content: flex-end;
 	width: 95%;
-	font-size: 5px;
+	font-size: 7px;
 	color: gray;
 	margin: auto;
 }
 .point{
+	position: absolute;
 	color: #FFF;
 	text-decoration: none;
 }
@@ -138,9 +147,22 @@ footer{
     	min-width: 90%;
 	}
 }
+@media (max-width: 820px) {
+	.content{
+    	width: 70%;
+	}
+}
 @media (max-width: 550px) {
 	.main-title{
     	font-size: 15px;
+	}
+}
+@media (max-width: 520px) {
+	.playerNickName{
+		width: 80%;
+	}
+	.content{
+		width: 90%;
 	}
 }
 @media (max-width: 330px) {

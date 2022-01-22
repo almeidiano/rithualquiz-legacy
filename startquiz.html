@@ -17,22 +17,22 @@
 				</div>
 				<form id="userNick">
 					<div class="question">
-						<input required="" maxlength="15" type="text" class="playerNickName" placeholder="Digite seu Apelido">
+						<input onKeyDown="keyPressed(event)" required="" maxlength="15" type="text" class="playerNickName" placeholder="Digite seu Apelido">
 					</div>
 					<div class="startBtnArea"><button type="submit" class="btn">Começar o teste</button></div>
 				</form>
 			</div>
 		</div>
 	</main>
-	<footer><a href="#"><img src="assets/img/github.png" height="50"></a></footer>
+	<footer><a href="https://github.com/almeidiano/rithualquiz" target="_blank"><img src="assets/img/github.png" height="50"></a></footer>
 	<script type="text/javascript">
 		const nickForm = document.getElementById("userNick");
 
 		nickForm.addEventListener("submit", (e) => {
 			e.preventDefault();
-			let input = document.querySelector("input");			
-
-			localStorage.setItem("playerNick", input.value);
+			let nick = document.querySelector("input").value;			
+			const result = nick.trim(); 
+			localStorage.setItem("playerNick", result);
 			window.location.href = "quiz.html";
 		})
 	</script>

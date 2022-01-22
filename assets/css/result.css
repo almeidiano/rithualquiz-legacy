@@ -1,6 +1,10 @@
 @font-face {
 	font-family: 'JetBrains Mono Regular';
-	src: url('JetBrainsMono-Regular.ttf');
+	src: url('../fonts/JetBrainsMono-Regular.ttf');
+}
+@font-face {
+	font-family: 'Dialeto Ancestral Regular';
+	src: url('../fonts/DialetoAncestral-Regular.ttf');
 }
 body{
 	margin: 0;
@@ -39,7 +43,6 @@ button{
 	color: rgb(209, 106, 208);
 }
 #container{
-	margin-top: 10px;
 	height: 100vh;
 	width: 100%;
 	display: flex;
@@ -100,6 +103,17 @@ button{
 	margin: auto;
 	padding-bottom: 20px;
 }
+.fillScreen{
+	opacity: 0;
+  	position: fixed;
+  	top: 0;
+  	bottom: 0;
+  	left: 0;
+  	right: 0;
+}
+.fillScreen img {
+	width: 100%;
+}
 footer{
 	background: #000;
 	display: flex;
@@ -112,9 +126,29 @@ footer{
 		width: 80%;
 	}
 }
+@media(max-width: 555px) {
+	.fillScreen img{
+		height: 100vh;
+	}
+}
+@media(max-width: 440px) {
+	.char-thumb img{
+		height: 280px;
+	}
+}
 @media(max-width: 425px) {
-	.content{
-		width: 90%;
+	.char-thumb img{
+		height: 250px;
+	}
+}
+@media(max-width: 370px) {
+	.fillScreen img{
+		height: 150vh;
+	}
+}
+@media(max-width: 325px) {
+	.fillScreen img{
+		height: 150vh;
 	}
 }
 @keyframes madger-animation {

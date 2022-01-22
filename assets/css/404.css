@@ -41,6 +41,7 @@ a,span{
 	color: #fb4cec;
 }
 .content{
+	height: 100vh;
 	width: 95%;
 	margin: auto;
 	padding: 10px 0px;
@@ -51,6 +52,8 @@ a,span{
 }
 .desc-text,
 .desc-title{
+    width: 90%;
+    margin: auto;	
 	text-align: center;
 }
 .banner{
