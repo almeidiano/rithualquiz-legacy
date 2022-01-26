@@ -1,7 +1,9 @@
 const playerNick = localStorage.getItem("playerNick");
 
-if(playerNick == null) {
-	window.location.href = "startquiz.html";
+function checkIfPlayerExist() {
+	if(playerNick == null) {
+		window.location.href = "startquiz.html";
+	}
 }
 
 let questions = [
@@ -615,3 +617,5 @@ let questions = [
 		]
 	}
 ];
+
+export {playerNick, checkIfPlayerExist, questions};

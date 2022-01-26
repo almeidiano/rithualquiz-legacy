@@ -15,7 +15,7 @@
 				<div class="playerNickDesc">
 					Digite seu apelido para deixar o teste customizado. 	
 				</div>
-				<form id="userNick">
+				<form id="playerNick">
 					<div class="question">
 						<input onKeyDown="keyPressed(event)" required="" maxlength="15" type="text" class="playerNickName" placeholder="Digite seu Apelido">
 					</div>
@@ -26,7 +26,7 @@
 	</main>
 	<footer><a href="https://github.com/almeidiano/rithualquiz" target="_blank"><img src="assets/img/github.png" height="50"></a></footer>
 	<script type="text/javascript">
-		const nickForm = document.getElementById("userNick");
+		const nickForm = document.getElementById("playerNick");
 
 		nickForm.addEventListener("submit", (e) => {
 			e.preventDefault();

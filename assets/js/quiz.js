@@ -9,9 +9,12 @@ let playerAttributes = {
 }
 
 const c = (el) => document.querySelector(el);
-const cs = (el) => document.querySelectorAll(el);
 
-let res = questions = questions.sort(() => Math.random() - 0.5);
+var res;
+
+function shuffleQuestions(questions) {
+	res = questions = questions.sort(() => Math.random() - 0.5);
+}
 
 function questionNumber() {
 	let questionNumber = parseInt(c(".question .highlight").innerHTML);
@@ -23,16 +26,12 @@ function questionNumber() {
 	}
 
 	if(questionNumber == 21) {
-		// Object.values(playerAttributes).forEach(char => {
-		// 	if(largestNumber <= char) {
-		// 		largestNumber = char;
-		// 	}
-		// });
-
+		c(".desc-content").innerHTML = "Carregando...";
 		let allPoints = Object.values(playerAttributes).sort((a, b) => {return b-a});
 		let charSelected = Object.keys(playerAttributes).reduce(function(a, b){ 
 			return playerAttributes[a] > playerAttributes[b] ? a : b 
 		});
+
 		let highestPoint = allPoints[0];
 
 		if(charSelected == "parasitum" && highestPoint == 20) {
@@ -61,65 +60,57 @@ function applyQuestion() {
 	});
 }
 
-function sumAttr(ob1, ob2) {
-    let sum = {};
-
-    Object.keys(ob1).forEach(key => {
-        if(ob2.hasOwnProperty(key)) {
-            sum[key] = ob1[key] + ob2[key]
-        }
-    })
-    return sum;
+function showQuestionAndAnswers() {
+	if(c(".content").classList.contains("quiz")) {
+		c(".question-text").innerHTML = `${res[i].question}`;
+		let answers = res[i].answers = res[i].answers.sort(() => Math.random() - 0.5);
+		answers.forEach(el => {
+			c(".btnsArea").innerHTML += `<button class="btn" onclick="updateQuestion(this)" data-effect="${el.effect}" data-char="${el.characteristic}"><div class="btnText">${el.answer}</div></button>`;
+		});
+	}
 }
 
-if(c(".content").classList.contains("quiz")) {
-	c(".question-text").innerHTML = `${res[i].question}`;
-	let answers = res[i].answers = res[i].answers.sort(() => Math.random() - 0.5);
-	answers.forEach(el => {
-		c(".btnsArea").innerHTML += `<button class="btn" onclick="updateQuestion(this)" data-effect="${el.effect}" data-char="${el.characteristic}"><div class="btnText">${el.answer}</div></button>`;
-	});
-}
+function sumPlayerAttributes(btn) {
+	let dataChar;
+	let dataEffect;
 
-function updateQuestion(btn) {
-		let dataChar = btn.getAttribute("data-char");
-		let dataEffect = parseInt(btn.getAttribute("data-effect"));
+	dataChar = btn.getAttribute("data-char");
+	dataEffect = parseInt(btn.getAttribute("data-effect"));
 
-		let charEffects = new Object();
-		charEffects[dataChar] = dataEffect;
-		let sum = [];
+	let charEffects = new Object();
+	charEffects[dataChar] = dataEffect;
 
-		if(res[i].typeOf == "dynamic") {
-			let focus = res[i].focus;
-			let opposite = res[i].opposite;
+	let sum = [];
 
-			switch(dataChar) {
-				case focus:
-				    Object.keys(playerAttributes).forEach(key => {
-				        if(Object.keys(charEffects) == key){
-				        	playerAttributes[focus] += dataEffect;
-				        	playerAttributes[opposite] -= dataEffect;
-				        }
-				    })
-				break;
-				case opposite:
-				    Object.keys(playerAttributes).forEach(key => {
-				        if(Object.keys(charEffects) == key){
-				        	playerAttributes[opposite] += dataEffect;
-				        	playerAttributes[focus] -= dataEffect;
-				        }
-				    })
-				break;
-			}
-		}else{
-		    Object.keys(playerAttributes).forEach(key => {
-		        if(Object.keys(charEffects) == key){
-		        	playerAttributes[key] += dataEffect;
-		        }
-		    })
+	if(res[i].typeOf == "dynamic") {
+		let focus = res[i].focus;
+		let opposite = res[i].opposite;
+
+		switch(dataChar) {
+			case focus:
+			Object.keys(playerAttributes).forEach(key => {
+				if(Object.keys(charEffects) == key){
+					playerAttributes[focus] += dataEffect;
+					playerAttributes[opposite] -= dataEffect;
+				}
+			})
+			break;
+			case opposite:
+			Object.keys(playerAttributes).forEach(key => {
+				if(Object.keys(charEffects) == key){
+					playerAttributes[opposite] += dataEffect;
+					playerAttributes[focus] -= dataEffect;
+				}
+			})
+			break;
 		}
-
-		questionNumber();
-	    applyQuestion();
+	}else{
+		Object.keys(playerAttributes).forEach(key => {
+			if(Object.keys(charEffects) == key){
+				playerAttributes[key] += dataEffect;
+			}
+		})
+	}
 }
 
 function getRandomNumber(min, max) {
@@ -141,6 +132,9 @@ function moveToRandomPosition() {
 
 	let winWidth = window.innerWidth;
 	let winHeight = window.innerHeight;
+
+	let randomTop;
+	let randomLeft;
 		
 	randomTop = getRandomNumber(0, winHeight);
 	randomLeft = getRandomNumber(0, winWidth);
@@ -153,7 +147,7 @@ function moveToRandomPosition() {
 	}
 }
 
-function updateStrangeQuestion() {
+function updateStrangeQuestion19times() {
 	moveToRandomPosition();
 
 	if(checkTouching(c(".point"), c(".content")) == true) {
@@ -163,23 +157,6 @@ function updateStrangeQuestion() {
 	playerAttributes["parasitum"] += 1;
 	questionNumber();
 	applyQuestion();
-
-	// for(i=0; i<point.length; i++) {
-	// 	var thisDiv = point[i];
-		
-	    // randomTop = getRandomNumber(0, winHeight);
-	    // randomLeft = getRandomNumber(0, winWidth);
-
-	    // thisDiv.style.top = Math.floor(randomTop) + "px";
-	    // thisDiv.style.left = Math.floor(randomLeft) + "px";
-
-	    // let truePoint = c(".point");
-	    // let trueContent = c(".content");
-
-	    // checkTouching(truePoint, trueContent);
-	// }
-
-	// playerAttributes["parasitum"] += 1;
-	// questionNumber();
-	// applyQuestion();
 }
+
+export {i, playerAttributes, c, shuffleQuestions, res, showQuestionAndAnswers, sumPlayerAttributes, applyQuestion, questionNumber, moveToRandomPosition, checkTouching, getRandomNumber}
