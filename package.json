@@ -1,0 +1,26 @@
+{
+  "name": "rithualquiz",
+  "version": "1.0.0",
+  "description": "Um quiz que estima qual personagem você seria no universo de Rithual",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/almeidiano/rithualquiz.git"
+  },
+  "keywords": [
+    "Quiz",
+    "Rithual"
+  ],
+  "author": "Almeidiano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/almeidiano/rithualquiz/issues"
+  },
+  "homepage": "https://github.com/almeidiano/rithualquiz#readme",
+  "dependencies": {
+    "loading-circle": "^1.1.0"
+  }
+}

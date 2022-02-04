@@ -26,7 +26,10 @@ function questionNumber() {
 	}
 
 	if(questionNumber == 21) {
-		c(".desc-content").innerHTML = "Carregando...";
+		c(".desc-content").innerHTML = "Carregando..."+"<br/>";
+		let span = document.createElement("span");
+		span.classList.add("loading-circle");
+		c(".desc-content").appendChild(span);
 		let allPoints = Object.values(playerAttributes).sort((a, b) => {return b-a});
 		let charSelected = Object.keys(playerAttributes).reduce(function(a, b){ 
 			return playerAttributes[a] > playerAttributes[b] ? a : b 
