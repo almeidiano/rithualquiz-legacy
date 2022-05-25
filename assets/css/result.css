@@ -77,6 +77,22 @@ button{
 	text-align: center;
 	padding: 20px 0px;
 }
+.allCharArea{
+	width: 90%;
+	margin: auto;
+	text-align: center;
+}
+.all-characters{
+	display: flex;
+	justify-content: center;
+}
+.all-characters .character span{
+	font-weight: bold;
+	padding: 0px 15px;
+}
+.all-characters .character div{
+	margin-top: 10px;
+}
 .char-thumb img{
 	height: 350px;
 	transition-duration: 200ms;

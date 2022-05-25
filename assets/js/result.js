@@ -1,4 +1,5 @@
 const c = (el) => document.querySelector(el);
+const cs = (el) => document.querySelectorAll(el);
 
 const characters = [
 	{id: 1, characterNick: "madger", characterName: "Madger Yasáshi", characterImg: 'assets/img/characters/madger.png', characterAttr: "extro", characterDesc: 'Você é uma pessoa bastante <span style="color:lightgreen;">extrovertida</span>, você ama aventuras e é bastante emotivo(a). Aproximando-se bastante da personalidade do Madger.'},
@@ -51,30 +52,64 @@ function applyCharResult() {
 			c(".character h1").innerHTML = finalCharacter.characterName;
 			switch(character.characterNick) {
 				case "madger":
-				c(".char-thumb").classList.add("madger");
-				c(".character h1").style.color = "lightgreen"
+					c(".madgerChar").remove();
+					c(".char-thumb").classList.add("madger");
+					c(".character h1").style.color = "lightgreen"
 				break;
 				case "singer":
-				c(".char-thumb").classList.add("singer");
-				c(".character h1").style.color = "lightblue"
+					c(".singerChar").remove();
+					c(".char-thumb").classList.add("singer");
+					c(".character h1").style.color = "lightblue"
 				break;
 				case "san":
-				c(".char-thumb").classList.add("san");
-				c(".character h1").style.color = "orange"
+					c(".sanChar").remove();
+					c(".char-thumb").classList.add("san");
+					c(".character h1").style.color = "orange"
 				break;
 				case "aika":
-				c(".char-thumb").classList.add("aika");
-				c(".character h1").style.color = "pink"
+					c(".aikaChar").remove();
+					c(".char-thumb").classList.add("aika");
+					c(".character h1").style.color = "pink"
 				break;
 				case "parasitum":
-				c(".char-thumb").classList.add("parasitum");
-				parasitumDistortion();
+					c(".char-thumb").classList.add("parasitum");
+					parasitumDistortion();
 				break;
 			}
 			c(".char-desc").innerHTML = finalCharacter.characterDesc;
-				localStorage.clear();
 			}
 		})
 }
 
-export {c, characters, charResult, checkCharResult, applyCharResult}
+function applyCharPercentage(){
+	const allCharacters = JSON.parse(localStorage.getItem("allCharacters"));
+	console.log(allCharacters);
+	function findAndApply(character, characteristic){
+		cs(".character").forEach(char => {
+			if(char.classList.contains(character)){
+				c(`.${CSS.escape(character)} .percentage`).innerText = characteristic;
+			}
+		})
+	}
+
+	Object.keys(allCharacters).forEach(char => {
+		switch(char){
+			case 'intro':
+				findAndApply('singerChar', `${allCharacters.intro}%`);
+			break;
+			case 'intellectual':
+				findAndApply('sanChar', `${allCharacters.intellectual}%`);
+			break;
+			case 'extro':
+				findAndApply('madgerChar', `${allCharacters.extro}%`);
+			break;
+			case 'charisma':
+				findAndApply('aikaChar', `${allCharacters.charisma}%`);
+			break;
+		}
+	})
+
+	localStorage.clear();
+}
+
+export {c, characters, charResult, checkCharResult, applyCharResult, applyCharPercentage}

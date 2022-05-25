@@ -27,9 +27,12 @@ function questionNumber() {
 
 	if(questionNumber == 21) {
 		c(".desc-content").innerHTML = "Carregando..."+"<br/>";
-		let span = document.createElement("span");
-		span.classList.add("loading-circle");
-		c(".desc-content").appendChild(span);
+		let loadingArea = document.createElement("div");
+		let loadingSpin = document.createElement("div");
+		loadingArea.appendChild(loadingSpin);
+		loadingArea.classList.add("loading-area");
+		loadingSpin.classList.add("loading-spin");
+		c(".desc-content").appendChild(loadingArea);
 		let allPoints = Object.values(playerAttributes).sort((a, b) => {return b-a});
 		let charSelected = Object.keys(playerAttributes).reduce(function(a, b){ 
 			return playerAttributes[a] > playerAttributes[b] ? a : b 
@@ -46,7 +49,8 @@ function questionNumber() {
 			delete playerAttributes.parasitum;
 			let finalCharSelected = Object.keys(playerAttributes).reduce((a, b) => {
 			    return playerAttributes[a] > playerAttributes[b] ? a : b
-			});	
+			});
+			localStorage.setItem("allCharacters", JSON.stringify(playerAttributes));
 			localStorage.setItem("charResult", finalCharSelected);
 			window.location.href = "result.html";
 		}
@@ -55,7 +59,7 @@ function questionNumber() {
 
 function applyQuestion() {
 	i++;
-	c(".btnsArea").innerHTML = "";
+	c(".btnsArea").innerHTML = null;
 	c(".question-text").innerText = `${res[i].question}`;
 	let answers = res[i].answers = res[i].answers.sort(() => Math.random() - 0.5);
 	answers.forEach(el => {
