@@ -14,7 +14,7 @@ body{
 	background-color: #000;
 	color: #FFF;
 	font-family: 'JetBrains Mono Regular';
-	background-image: url('../img/characters/banner.png');
+	background-image: url('../img/characters/banner.webp');
 	background-size: cover;
 	background-repeat: no-repeat;
     background-position: 55%;
@@ -22,7 +22,7 @@ body{
 .btn{
 	color: #FFF;
 	background: #000;
-	border: 1px solid #FFF;
+	border: 1px solid rgb(48, 52, 54);
 	padding: 10px;
 	text-decoration: none;
 	margin: 5px 0px;
@@ -34,8 +34,7 @@ body{
 	margin: auto;
 }
 .btn:hover{
-	color: #000;
-	background-color: #FFF;
+	background-color: rgb(24, 26, 27);
 }
 .btnsArea{
 	text-align: center;

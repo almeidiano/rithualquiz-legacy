@@ -8,20 +8,19 @@ body{
 	background-color: #000;
 	color: #FFF;
 	font-family: 'JetBrains Mono Regular';
-	background-image: url('../img/characters/banner.png');
+	background-image: url('../img/characters/banner.webp');
 	background-size: cover;
     background-position: 70%;
     background-repeat: no-repeat;
 }
 .btn{
 	color: #FFF;
-	border: 1px solid #FFF;
+	border: 1px solid rgb(48, 52, 54);
 	padding: 10px;
 	text-decoration: none;
 }
 .btn:hover{
-	color: #000;
-	background-color: #FFF;
+	background-color: rgb(24, 26, 27);
 }
 .btnArea{
 	text-align: center;

@@ -12,7 +12,7 @@ body{
 	background-color: #000;
 	color: #FFF;
 	font-family: 'JetBrains Mono Regular';
-	background-image: url('../img/characters/banner.png');
+	background-image: url('../img/characters/banner.webp');
 	background-size: cover;
     height: 100%;
     background-position: 55%;
@@ -20,7 +20,7 @@ body{
 .btn,button{
 	color: #FFF;
 	background: #000;
-	border: 1px solid #FFF;
+	border: 1px solid rgb(48, 52, 54);
 	padding: 10px;
 	text-decoration: none;
 	margin: 5px 0px;
@@ -28,8 +28,7 @@ body{
 	font-family: 'JetBrains Mono Regular';
 }
 .btn:hover{
-	color: #000;
-	background-color: #FFF;
+	background-color: rgb(24, 26, 27);
 }
 .btnArea{
 	text-align: center;
@@ -85,6 +84,9 @@ button{
 .all-characters{
 	display: flex;
 	justify-content: center;
+}
+.characters{
+	display: flex;
 }
 .all-characters .character span{
 	font-weight: bold;
@@ -155,6 +157,21 @@ footer{
 @media(max-width: 425px) {
 	.char-thumb img{
 		height: 250px;
+	}
+}
+@media(max-width: 375px) {
+	.characters{
+		flex-direction: column;
+	}
+	.all-characters .character span {
+	    font-weight: bold;
+	    padding: 10px 10px;
+	    display: flex;
+	    text-align: center;
+	    justify-content: center;
+	}
+	.all-characters .character div {
+	    margin-top: 0px;
 	}
 }
 @media(max-width: 370px) {
