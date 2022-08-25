@@ -19,13 +19,13 @@ function parasitumDistortion() {
 	fillScreen.classList.add("fillScreen");
 	fillScreen.append(img);
 	body.append(fillScreen);
-
+	
 	let char_desc = c(".char-desc");
 	c(".character h1").style.fontFamily = "Dialeto Ancestral Regular";  
 	char_desc.style.fontFamily = "Dialeto Ancestral Regular";
 	char_desc.style.fontSize = "20px";
 	c(".btnArea a").innerText = "HAHAHAHAHAHA";
-
+	
 	c(".fillScreen").style.transition = "10s";
 	setTimeout(() => {
 		c(".fillScreen").style.opacity = "1";
@@ -42,63 +42,41 @@ function checkCharResult() {
 		c(".playerNick").innerHTML = localStorage.playerNick; 
 	}
 }
-		
+
 function applyCharResult() {
 	characters.forEach(character => {
 		if(character.characterAttr == charResult){
 			const finalCharacter = character;
-
+			
 			c(".char-thumb img").src = finalCharacter.characterImg;
 			c(".character h1").innerHTML = finalCharacter.characterName;
 			switch(character.characterNick) {
 				case "madger":
-					c(".char-thumb").classList.add("madger");
-					c(".character h1").style.color = "lightgreen"
+				c(".char-thumb").classList.add("madger");
+				c(".character h1").style.color = "lightgreen"
 				break;
 				case "singer":
-					c(".char-thumb").classList.add("singer");
-					c(".character h1").style.color = "lightblue"
+				c(".char-thumb").classList.add("singer");
+				c(".character h1").style.color = "lightblue"
 				break;
 				case "san":
-					c(".char-thumb").classList.add("san");
-					c(".character h1").style.color = "orange"
+				c(".char-thumb").classList.add("san");
+				c(".character h1").style.color = "orange"
 				break;
 				case "aika":
-					c(".char-thumb").classList.add("aika");
-					c(".character h1").style.color = "pink"
+				c(".char-thumb").classList.add("aika");
+				c(".character h1").style.color = "pink"
 				break;
 				case "parasitum":
-					c(".char-thumb").classList.add("parasitum");
-					parasitumDistortion();
+				c(".char-thumb").classList.add("parasitum");
+				parasitumDistortion();
 				break;
 			}
 			c(".char-desc").innerHTML = finalCharacter.characterDesc;
-			}
-		})
-}
-
-function applyCharPercentage(){
-	const allCharacters = JSON.parse(localStorage.getItem("allCharacters"));
-	console.log(allCharacters);
-
-	Object.keys(allCharacters).forEach(char => {
-		switch(char){
-			case 'intro':
-				c('.singerChar .percentage').innerText = `${allCharacters.intro}%`;
-			break;
-			case 'intellectual':
-				c('.sanChar .percentage').innerText = `${allCharacters.intellectual}%`;
-			break;
-			case 'extro':
-				c('.madgerChar .percentage').innerText = `${allCharacters.extro}%`;
-			break;
-			case 'charisma':
-				c('.aikaChar .percentage').innerText = `${allCharacters.charisma}%`;
-			break;
 		}
 	})
 
-	// localStorage.clear();
+	localStorage.clear();
 }
 
-export {c, characters, charResult, checkCharResult, applyCharResult, applyCharPercentage}
+export {c, characters, charResult, checkCharResult, applyCharResult}
