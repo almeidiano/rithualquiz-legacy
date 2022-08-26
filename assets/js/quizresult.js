@@ -4,3 +4,4 @@ const c = resultModule.c;
 
 resultModule.checkCharResult();
 resultModule.applyCharResult();
+resultModule.applyCharPercentage();

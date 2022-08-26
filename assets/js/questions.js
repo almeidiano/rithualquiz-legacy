@@ -13,25 +13,25 @@ let questions = [
 		answers: [
 			{
 				id: 1,
-				effect: 30,
+				effect: 10,
 				characteristic: "extro",
 				answer: "Divertido(a)"
 			},
 			{
 				id: 2,
-				effect: 30,
+				effect: 10,
 				characteristic: "intro",
 				answer: "Reflexivo(a)"
 			},
 			{
 				id: 3,
-				effect: 30,
+				effect: 10,
 				characteristic: "intellectual",
 				answer: "Inteligente"
 			},
 			{
 				id: 4,
-				effect: 30,
+				effect: 10,
 				characteristic: "charisma",
 				answer: "Carinhoso(a)"
 			}]
@@ -46,7 +46,7 @@ let questions = [
 		answers: [
 			{
 				id: 1,
-				effect: 20,
+				effect: 12,
 				characteristic: "intellectual",
 				answer: "É uma ótima fonte de adquirir conhecimento."
 			},
@@ -64,7 +64,7 @@ let questions = [
 			},
 			{
 				id: 4,
-				effect: 20,
+				effect: 12,
 				characteristic: "extro",
 				answer: "Leitura? Que coisa mais entediante!"
 			}]
@@ -137,7 +137,7 @@ let questions = [
 		answers: [
 			{
 				id: 1,
-				effect: 20,
+				effect: 12,
 				characteristic: "extro",
 				answer: "Claro! Manter o físico e a rotina saudável sempre em 1º lugar."
 			},
@@ -155,7 +155,7 @@ let questions = [
 			},
 			{
 				id: 4,
-				effect: 20,
+				effect: 12,
 				characteristic: "intellectual",
 				answer: "Claro que não, prefiro outras coisas."
 			}]
@@ -195,25 +195,25 @@ let questions = [
 		answers: [
 			{
 				id: 1,
-				effect: 20,
+				effect: 10,
 				characteristic: "intellectual",
 				answer: "Um cajado mágico." 
 			},
 			{
 				id: 2,
-				effect: 20,
+				effect: 10,
 				characteristic: "intro",
 				answer: "Espadas." 
 			},
 			{
 				id: 3,
-				effect: 20,
+				effect: 10,
 				characteristic: "charisma",
 				answer: "Pistolas." 
 			},
 			{
 				id: 4,
-				effect: 20,
+				effect: 10,
 				characteristic: "extro",
 				answer: "Lança Chinesa." 
 			}
@@ -229,7 +229,7 @@ let questions = [
 		answers: [
 			{
 				id: 1,
-				effect: 20,
+				effect: 12,
 				characteristic: "intro",
 				answer: "Sim, tenho dificuldade em socializar com desconhecidos." 
 			},
@@ -241,7 +241,7 @@ let questions = [
 			},
 			{
 				id: 3,
-				effect: 20,
+				effect: 12,
 				characteristic: "extro",
 				answer: "Não! Já sou extrovertido(a) até em grupos em que não conheço ninguém." 
 			},
@@ -291,7 +291,7 @@ let questions = [
 		answers: [
 			{
 				id: 1,
-				effect: 20,
+				effect: 12,
 				characteristic: "charisma",
 				answer: "Sim, adoro uma boa investigação." 
 			},
@@ -303,7 +303,7 @@ let questions = [
 			},
 			{ 
 				id: 3,
-				effect: 10,
+				effect: 12,
 				characteristic: "extro",
 				answer: "Considero chato, prefiro fazer outras coisas." 
 			},
@@ -407,25 +407,25 @@ let questions = [
 		answers: [
 			{
 				id: 1,
-				effect: 20,
+				effect: 10,
 				characteristic: "intro",
 				answer: "Eliminar o alvo rapidamente. (Assasino)" 
 			},
 			{
 				id: 2,
-				effect: 20,
+				effect: 10,
 				characteristic: "extro",
 				answer: "Durar bastante a batalha e me divertir. (Lutador)"
 			},
 			{ 
 				id: 3,
-				effect: 20,
+				effect: 10,
 				characteristic: 'charisma',
 				answer: 'Lutar "safe" e evitar ao maximo que o inimigo me atinja. (AD Carry)' 
 			},
 			{
 				id: 4,
-				effect: 20,
+				effect: 10,
 				characteristic: "intellectual",
 				answer: "Impedir que o inimigo chege em mim usando magia e controle de grupo. (Mago)"
 			}]
@@ -436,25 +436,25 @@ let questions = [
 		answers: [
 			{
 				id: 1,
-				effect: 20,
+				effect: 10,
 				characteristic: "intro",
 				answer: "Sentimento puro de vingança" 
 			},
 			{
 				id: 2,
-				effect: 20,
+				effect: 10,
 				characteristic: "extro",
 				answer: "Eu sempre tentaria honrar aos que foram e usar de motivo para continuar em frente."
 			},
 			{ 
 				id: 3,
-				effect: 20,
+				effect: 10,
 				characteristic: 'charisma',
 				answer: 'Decaio em tristeza assim como meus pensamentos, afinal, qual motivo de continuar se não for as pessoas que eu amo?' 
 			},
 			{
 				id: 4,
-				effect: 20,
+				effect: 10,
 				characteristic: "intellectual",
 				answer: "Pensar racionalmente e tentar resolver o problema pela raíz, não pelo fruto."
 			}]
@@ -539,13 +539,13 @@ let questions = [
 			},
 			{ 
 				id: 3,
-				effect: 10,
+				effect: 12,
 				characteristic: 'charisma',
 				answer: 'Sim! adoro desenhar!' 
 			},
 			{
 				id: 4,
-				effect: 10,
+				effect: 12,
 				characteristic: "intellectual",
 				answer: "Não! Que coisa chata."
 			}]
@@ -559,13 +559,13 @@ let questions = [
 		answers: [ 
 			{
 				id: 1,
-				effect: 20,
+				effect: 12,
 				characteristic: "intro",
 				answer: "Sim, gosto de refletir nos meus pensamentos dessa maneira" 
 			},
 			{
 				id: 2,
-				effect: 20,
+				effect: 12,
 				characteristic: "extro",
 				answer: "Claro que não! Coisa de maluco."
 			},
@@ -592,7 +592,7 @@ let questions = [
 		answers: [ 
 			{
 				id: 1,
-				effect: 20,
+				effect: 12,
 				characteristic: "intro",
 				answer: "SIM, NÃO TENHO 1 MINUTO DE PAZ COM ANSIEDADE!" 
 			},
@@ -610,7 +610,7 @@ let questions = [
 			},
 			{
 				id: 4,
-				effect: 20,
+				effect: 12,
 				characteristic: "intellectual",
 				answer: "Não sou uma pessoa ansiosa."
 			}

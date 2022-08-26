@@ -154,16 +154,4 @@ function moveToRandomPosition() {
 	}
 }
 
-function updateStrangeQuestion19times() {
-	moveToRandomPosition();
-
-	if(checkTouching(c(".point"), c(".content")) == true) {
-		moveToRandomPosition();
-	}
-
-	playerAttributes["parasitum"] += 1;
-	questionNumber();
-	applyQuestion();
-}
-
 export {i, playerAttributes, c, shuffleQuestions, res, showQuestionAndAnswers, sumPlayerAttributes, applyQuestion, questionNumber, moveToRandomPosition, checkTouching, getRandomNumber}

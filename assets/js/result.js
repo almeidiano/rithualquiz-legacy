@@ -75,8 +75,40 @@ function applyCharResult() {
 			c(".char-desc").innerHTML = finalCharacter.characterDesc;
 		}
 	})
+}
+
+function applyCharPercentage(){
+	const allCharacters = JSON.parse(localStorage.getItem("allCharacters"));
+	var allCharactersLessMore;
+
+	Object.keys(allCharacters).forEach(char => {
+		if(allCharacters[char] >= 100) {
+			allCharacters[char] = 100;
+		}else if(allCharacters[char] <= 0) {
+			allCharacters[char] = 0;
+		}
+
+		allCharactersLessMore = allCharacters;
+	})
+	
+	Object.keys(allCharactersLessMore).forEach(char => {
+		switch(char){
+			case 'intro':
+				c('.singerChar .percentage').innerText = `${allCharactersLessMore.intro}%`;
+			break;
+			case 'intellectual':
+				c('.sanChar .percentage').innerText = `${allCharactersLessMore.intellectual}%`;
+			break;
+			case 'extro':
+				c('.madgerChar .percentage').innerText = `${allCharactersLessMore.extro}%`;
+			break;
+			case 'charisma':
+				c('.aikaChar .percentage').innerText = `${allCharactersLessMore.charisma}%`;
+			break;
+		}
+	})
 
 	localStorage.clear();
 }
 
-export {c, characters, charResult, checkCharResult, applyCharResult}
+export {c, characters, charResult, checkCharResult, applyCharResult, applyCharPercentage}
